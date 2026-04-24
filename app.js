@@ -27,3 +27,15 @@ pauseBtn.addEventListener('click', () => {
     icon.classList.toggle('fa-pause');
     icon.classList.toggle('fa-play');
 });
+
+//3rd section//
+// Featured News Cards par click event
+const newsCards = document.querySelectorAll('.news-card');
+
+newsCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const title = card.querySelector('.card-bottom h3, .card-bottom h4').innerText;
+        console.log("Navigating to article: " + title);
+        // alert("Aap is article par ja rahe hain: " + title);
+    });
+});

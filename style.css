@@ -385,3 +385,832 @@ body {
         font-size: 50px;
     }
 }
+
+
+/* =========================================
+   FEATURED NEWS SECTION
+   ========================================= */
+
+.featured-news-section {
+    background-color: #fff;
+    /* White background as per image */
+    color: #000;
+    padding: 80px 40px;
+    /* Upar/niche 80px, left/right 40px padding */
+}
+
+
+/* Header Area (Heading + Link) */
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    /* Heading aur cards ke darmiyan margin */
+}
+
+.section-header h2 {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.view-all-link {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.view-all-link:hover {
+    color: #d83933;
+}
+
+.red-arrow {
+    color: #d83933;
+    font-size: 20px;
+}
+
+
+/* --- CSS GRID SYSTEM (The Magic) --- */
+
+.news-grid {
+    display: grid;
+    /* 3 Columns banaye hain: Pehla bada (2fr), Baaki do chote (1fr 1fr) */
+    grid-template-columns: 2fr 1fr 1fr;
+    /* 2 Rows banayi hain, har row 250px ki */
+    grid-template-rows: 250px 250px;
+    gap: 20px;
+    /* Cards ke darmiyan fasla */
+}
+
+
+/* Kis card ko kitni jagah leni hai? */
+
+.card-large {
+    grid-row: span 2;
+    /* Yeh 2 rows ki height cover karega */
+}
+
+.card-tall {
+    grid-row: span 2;
+    /* Yeh bhi 2 rows ki height cover karega */
+}
+
+.card-small {
+    /* Chote cards auto 1 row lenge */
+}
+
+
+/* --- INDIVIDUAL CARD STYLING --- */
+
+.news-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+
+/* Hover par card thoda sa upar move karega (Professional touch) */
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Dark Overlay taake safaid text clear nazar aye */
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 1;
+}
+
+
+/* Card ke andar ka text (Top aur Bottom mein divide kiya) */
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    /* Overlay ke upar laane ke liye */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Top aur Bottom ko alag alag end par bhej dega */
+    padding: 25px;
+}
+
+.category-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.category-tag i {
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.read-time {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.news-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.news-card h4 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN (Mobiles & Tablets)
+   ========================================= */
+
+@media (max-width: 1024px) {
+    /* Tablet Par: 2 Columns kar diye */
+    .news-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+    .card-large {
+        grid-column: span 2;
+        grid-row: auto;
+        height: 400px;
+    }
+    .card-tall {
+        height: 300px;
+    }
+    .card-small {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile Par: Sab 1 column ke niche ek */
+    .featured-news-section {
+        padding: 50px 20px;
+    }
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+    .card-large {
+        grid-column: span 1;
+    }
+}
+
+
+/* =========================================
+   HORIZONTAL ARTICLES SECTION
+   ========================================= */
+
+.horizontal-articles-section {
+    background-color: #fff;
+    color: #000;
+    padding-top: 20px;
+    /* Upar se thodi space */
+}
+
+
+/* Main Container jisme 4 articles hain */
+
+.articles-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 0 40px 40px 40px;
+    /* Bottom aur sides ki padding */
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+
+/* Single Article Box (Image + Text ko side-by-side karne ke liye) */
+
+.article-item {
+    display: flex;
+    align-items: center;
+    /* Image aur text ko vertically center rakhega */
+    gap: 15px;
+    /* Image aur text ke darmiyan fasla */
+    flex: 1;
+    /* Sabko barabar width dega */
+}
+
+
+/* --- Gol Image (Circle) Styling --- */
+
+.article-img img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    /* Image ko bilkul gol (circle) banane ke liye */
+    object-fit: cover;
+    /* Image circle ke andar stretch na ho, fit rahe */
+    border: 1px solid #eaeaea;
+    /* Halka sa border taake white background par wazeh ho */
+}
+
+
+/* --- Text Area Styling --- */
+
+.article-text {
+    display: flex;
+    flex-direction: column;
+    /* Text ko upar-neeche rakhne ke liye */
+}
+
+.article-text .read-time {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.article-text h4 {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.article-text h4:hover {
+    color: #d83933;
+    /* Hover par red hoga */
+}
+
+.article-text .category-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #555;
+    /* Text color thoda grey */
+    text-transform: uppercase;
+}
+
+.article-text .category-tag i {
+    font-size: 13px;
+    margin-right: 4px;
+}
+
+
+/* NASA ki Bottom Blue Line */
+
+.bottom-blue-line {
+    height: 6px;
+    background-color: #0b3d91;
+    /* Official NASA Blue color */
+    width: 100%;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN (Tablets & Mobiles)
+   ========================================= */
+
+@media (max-width: 1200px) {
+    /* Tablet par 2 articles ki 2 rows ban jayengi */
+    .articles-container {
+        flex-wrap: wrap;
+    }
+    .article-item {
+        min-width: 45%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile par sab aik ke neeche aik aayega */
+    .articles-container {
+        padding: 0 20px 30px 20px;
+    }
+    .article-item {
+        min-width: 100%;
+    }
+}
+
+
+/* =========================================
+   FULL SCREEN ALIEN EARTH SECTION
+   ========================================= */
+
+.alien-earth-section {
+    /* Screen ki poori jagah cover karne ke liye */
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    /* Background Image Setting */
+    background-image: url('https://images.unsplash.com/photo-1633519888998-356aee06e40d?q=80&w=2000');
+    /* Mars/Volcanic style placeholder image */
+    .alien-earth-section {
+        /* Baaki code waisa hi rahega */
+        /* Yahan ab aap ki apni local computer wali picture lag jayegi */
+        background-image: url('alien-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    background-size: cover;
+    /* Picture ko poori screen par stretch karega */
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Layout */
+    display: flex;
+    align-items: center;
+    /* Content ko center mein layega */
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* --- Dark Gradient Overlay --- */
+
+
+/* Left side ko thoda dark kiya hai taake text nazar aaye */
+
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%);
+    z-index: 1;
+}
+
+
+/* --- Content Container --- */
+
+.content-container {
+    position: relative;
+    z-index: 2;
+    /* Overlay ke upar laane ke liye */
+    max-width: 800px;
+    padding-left: 60px;
+    /* Sirf left se margin rakha hai NASA style ke liye */
+    color: #fff;
+}
+
+.content-container h1 {
+    font-size: 55px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+.content-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-weight: 400;
+    max-width: 700px;
+    /* Paragraph ko thoda narrow rakha hai */
+}
+
+
+/* --- Stream on NASA+ Action --- */
+
+.stream-action {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.stream-action a {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.stream-action a:hover {
+    color: #d83933;
+    /* Hover par text red hoga */
+}
+
+.red-arrow-icon {
+    color: #d83933;
+    /* Exact red arrow jesa picture mein hai */
+    font-size: 22px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN (Tablets & Mobiles)
+   ========================================= */
+
+@media (max-width: 768px) {
+    .content-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .content-container h1 {
+        font-size: 40px;
+    }
+    .content-container p {
+        font-size: 16px;
+    }
+    /* =========================================
+   FULL SCREEN ALIEN EARTH SECTION
+   ========================================= */
+    .alien-earth-section {
+        /* Screen ki poori jagah cover karne ke liye */
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        /* Yahan ab aap ki apni local computer wali picture lag gayi hai */
+        background-image: url('alien-bg.jpg');
+        background-size: cover;
+        /* Picture ko poori screen par stretch karega */
+        background-position: center;
+        /* Picture ka center hissa screen ke center mein rakhega */
+        background-repeat: no-repeat;
+        /* Picture ko repeat hone se rokega */
+        /* Layout */
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+    /* --- Dark Gradient Overlay --- */
+    .dark-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* Left side ko thoda dark kiya hai taake text nazar aaye */
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%);
+        z-index: 1;
+    }
+    /* --- Content Container --- */
+    .content-container {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        padding-left: 60px;
+        color: #fff;
+    }
+    .content-container h1 {
+        font-size: 55px;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 25px;
+        letter-spacing: -1px;
+    }
+    .content-container p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 40px;
+        font-weight: 400;
+        max-width: 700px;
+    }
+    /* --- Stream on NASA+ Action --- */
+    .stream-action {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+    }
+    .stream-action a {
+        color: #fff;
+        font-size: 22px;
+        font-weight: 800;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .stream-action a:hover {
+        color: #d83933;
+    }
+    .red-arrow-icon {
+        color: #d83933;
+        font-size: 22px;
+    }
+    /* =========================================
+   RESPONSIVE DESIGN (Tablets & Mobiles)
+   ========================================= */
+    @media (max-width: 768px) {
+        .content-container {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .content-container h1 {
+            font-size: 40px;
+        }
+        .content-container p {
+            font-size: 16px;
+        }
+    }
+}
+
+
+/* =========================================
+   EXPLORING EARTH SECTION
+   ========================================= */
+
+.exploring-earth-section {
+    background-color: #fff;
+    padding: 80px 40px;
+}
+
+.earth-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.earth-header h2 {
+    font-size: 45px;
+    font-weight: 800;
+    color: #000;
+}
+
+.discover-link {
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* 4 Column Grid System */
+
+.earth-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 barabar ke columns */
+    gap: 20px;
+}
+
+.earth-card {
+    position: relative;
+    height: 450px;
+    /* Cards ki height */
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.earth-card:hover {
+    transform: scale(1.02);
+    /* Hover par thoda zoom effect */
+}
+
+.earth-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+}
+
+.earth-card-content {
+    position: absolute;
+    bottom: 30px;
+    left: 25px;
+    right: 25px;
+    z-index: 2;
+}
+
+.earth-card-content h3 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.card-arrow {
+    color: #fc3d21;
+    /* NASA Red color for the small arrow */
+    font-size: 24px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1200px) {
+    .earth-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    /* Tablet par 2 columns */
+}
+
+@media (max-width: 768px) {
+    .earth-grid {
+        grid-template-columns: 1fr;
+    }
+    /* Mobile par 1 column */
+    .earth-header h2 {
+        font-size: 30px;
+    }
+}
+
+
+/* =========================================
+   IMAGE OF THE DAY SECTION
+   ========================================= */
+
+.image-of-day-section {
+    background-color: #fff;
+    /* White background */
+    color: #000;
+    padding: 100px 40px;
+}
+
+
+/* Main Container (Grid Layout) */
+
+.iotd-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    /* Left side choti (1 hissa), Right side badi (1.8 hissa) */
+    gap: 60px;
+    /* Dono sides ke darmiyan fasla */
+}
+
+
+/* --- Left Side Text Styling --- */
+
+.iotd-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.iotd-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #666;
+    /* Grey color */
+    margin-bottom: 10px;
+}
+
+.iotd-text h2 {
+    font-size: 45px;
+    font-weight: 800;
+    margin-bottom: 50px;
+    /* Heading aur subheading ke darmiyan kafi space hai */
+}
+
+.iotd-text h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.iotd-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.browse-link,
+.view-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* --- Right Side Visuals Styling --- */
+
+.iotd-frame {
+    position: relative;
+    /* Download button ko control karne ke liye */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 barabar images ke liye */
+    gap: 4px;
+    /* Images ke darmiyan patli line */
+    background-color: #888;
+    /* Grey color ki frame aur gap */
+    padding: 4px;
+    /* Frame ka border effect banayega */
+}
+
+.iotd-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Niche aane wali extra space khatam karne ke liye */
+}
+
+
+/* Blue Download Button */
+
+.download-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    background-color: #1b5ed8;
+    /* NASA Blue */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    /* Circle shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #154bb3;
+}
+
+
+/* View Image text below frame */
+
+.view-image-container {
+    display: flex;
+    justify-content: flex-end;
+    /* Text ko right side par bhejne ke liye */
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN (Tablets & Mobiles)
+   ========================================= */
+
+@media (max-width: 1024px) {
+    /* Tablet & Mobile par grid ko 1 column mein badal diya */
+    .iotd-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .iotd-text h2 {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-of-day-section {
+        padding: 50px 20px;
+    }
+    /* Mobile par dono images upar niche ho jayengi */
+    .iotd-frame {
+        grid-template-columns: 1fr;
+    }
+}
