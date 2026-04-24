@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Navbar - Responsive</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="nasa-nav">
+
+        <button class="mobile-menu-btn" id="mobileMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="nav-left">
+            <div class="explore-menu">
+                <span class="explore-text">Explore</span>
+                <div class="icon-circle">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Search" id="searchInput">
+            </div>
+        </div>
+
+        <div class="nav-center">
+            <a href="#">
+                <img src="https://www.nasa.gov/wp-content/themes/nasa/assets/images/nasa-logo.svg" alt="NASA Logo">
+            </a>
+        </div>
+
+        <div class="nav-right">
+            <div class="nav-link">
+                News & Events <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="nav-link">
+                Multimedia <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="nav-link nasa-plus">
+                NASA+ <span class="live-badge">LIVE</span>
+            </div>
+        </div>
+
+        <button class="mobile-search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

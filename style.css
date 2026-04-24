@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Public Sans', sans-serif;
+}
+
+body {
+    background-color: #000;
+}
+
+
+/* Main Navbar Container */
+
+.nasa-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    height: 90px;
+    padding: 0 40px;
+    position: relative;
+    /* Center logo ki placement ke liye zaroori ha */
+    border-bottom: 1px solid #222;
+    /* Halka divider */
+}
+
+
+/* --- Left Section --- */
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.explore-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.explore-text {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.icon-circle {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-circle i {
+    color: #fff;
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+.search-box input {
+    background-color: transparent;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 10px 15px;
+    width: 250px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-box input::placeholder {
+    color: #888;
+}
+
+.search-box input:focus {
+    border-color: #888;
+}
+
+
+/* Click karne par border bright hoga */
+
+
+/* --- Center Section (Logo) --- */
+
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-center img {
+    height: 65px;
+}
+
+
+/* --- Right Section --- */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-link {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #fc3d21;
+}
+
+
+/* Hover par red hoga */
+
+.nav-link i {
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+.live-badge {
+    border: 1px solid #d83933;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 6px;
+    letter-spacing: 1px;
+    margin-left: 8px;
+    border-radius: 2px;
+}
+
+
+/* --- Mobile Specific Elements (Hidden by default) --- */
+
+.mobile-menu-btn,
+.mobile-search-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN (Mobiles & Tablets)
+   ========================================= */
+
+@media (max-width: 1024px) {
+    /* Navbar ki side padding kam kar di */
+    .nasa-nav {
+        padding: 0 20px;
+    }
+    /* Desktop wale sections chhupa diye */
+    .nav-left,
+    .nav-right {
+        display: none;
+    }
+    /* Mobile wale icons show kar diye */
+    .mobile-menu-btn,
+    .mobile-search-btn {
+        display: block;
+    }
+}
