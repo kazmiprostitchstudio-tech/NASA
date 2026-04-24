@@ -9,3 +9,21 @@ mobileMenuBtn.addEventListener('click', function() {
     // Agar alert check karna chahein to isko uncomment kar lein:
     // alert("Mobile Menu Opened!");
 });
+// Search Box Focus Effect
+const searchInput = document.getElementById('searchInput');
+
+searchInput.addEventListener('focus', () => {
+    searchInput.style.borderColor = '#fff';
+});
+
+searchInput.addEventListener('blur', () => {
+    searchInput.style.borderColor = '#444';
+});
+
+// Pause/Play Button Toggle logic (Optional placeholder)
+const pauseBtn = document.querySelector('.blue-btn');
+pauseBtn.addEventListener('click', () => {
+    const icon = pauseBtn.querySelector('i');
+    icon.classList.toggle('fa-pause');
+    icon.classList.toggle('fa-play');
+});
