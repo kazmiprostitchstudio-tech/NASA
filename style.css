@@ -1214,3 +1214,129 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* =========================================
+   MORE NASA IMAGES SECTION
+   ========================================= */
+
+.more-images-section {
+    background-color: #fff;
+    /* White background */
+    color: #000;
+    padding: 80px 40px;
+}
+
+.more-images-container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.more-images-container h2 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+}
+
+
+/* 3 Columns Grid for the Main Cards */
+
+.more-images-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.gallery-card {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+
+/* --- The Mosaic Box Magic --- */
+
+.mosaic-box {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* Left side 2 hisse, Right side 1 hissa */
+    grid-template-rows: 1fr 1fr;
+    /* 2 barabar rows */
+    gap: 4px;
+    /* Tasveeron ke darmiyan patli white line jesi image mein hai */
+    margin-bottom: 20px;
+    height: 250px;
+    /* Mosaic ki total height */
+}
+
+
+/* Badi tasveer 2 rows ki jagah legi */
+
+.mosaic-large {
+    grid-row: span 2;
+}
+
+
+/* Images ko box ke andar fit karne ka code */
+
+.mosaic-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Hover Effect - Images par halka sa bright/zoom effect */
+
+.gallery-card:hover .mosaic-box img {
+    opacity: 0.9;
+}
+
+
+/* --- Text Below Images --- */
+
+.gallery-card h4 {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+.gallery-meta {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    /* "70 IMAGES" ke letters door door karne ke liye */
+    color: #666;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN (Tablets & Mobiles)
+   ========================================= */
+
+@media (max-width: 1024px) {
+    /* Tablet par 2 columns */
+    .more-images-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile par 1 column */
+    .more-images-section {
+        padding: 50px 20px;
+    }
+    .more-images-container h2 {
+        font-size: 32px;
+    }
+    .more-images-grid {
+        grid-template-columns: 1fr;
+    }
+    .mosaic-box {
+        height: 300px;
+    }
+    /* Mobile par tasveerein thodi badi achi lagti hain */
+}
