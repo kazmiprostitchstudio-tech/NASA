@@ -230,6 +230,10 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 10px;
+    -webkit-border-radius: ;
+    -moz-border-radius: ;
+    -ms-border-radius: ;
+    -o-border-radius: ;
 }
 
 .search-box input {
@@ -245,6 +249,10 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
 }
 
 .nav-center img {
@@ -305,6 +313,10 @@ body {
     font-weight: 700;
     border-radius: 4px;
     display: inline-block;
+    -webkit-border-radius: ;
+    -moz-border-radius: ;
+    -ms-border-radius: ;
+    -o-border-radius: ;
 }
 
 
@@ -365,6 +377,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    -webkit-border-radius: ;
+    -moz-border-radius: ;
+    -ms-border-radius: ;
+    -o-border-radius: ;
 }
 
 .blue-btn {
@@ -425,6 +441,10 @@ body {
     align-items: center;
     gap: 8px;
     transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
 }
 
 .view-all-link:hover {
@@ -1339,4 +1359,181 @@ body {
         height: 300px;
     }
     /* Mobile par tasveerein thodi badi achi lagti hain */
+}
+
+
+/* =========================================
+   FULL-SCREEN BIRTHDAY SECTION (OVERLAID LAYOUT)
+   ========================================= */
+
+.birthday-full-screen-section {
+    /* Full viewbox area cover karne ke liye */
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    /* Background Image Setting - Placeholder URL for testing */
+    background-image: url('https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?q=80&w=2000');
+    background-size: cover;
+    /* Picture ko stretch kar ke full screen fill karega */
+    background-position: center;
+    /* Image center focus rahega */
+    background-repeat: no-repeat;
+    /* Layout */
+    display: flex;
+    align-items: center;
+    /* Content vertically center */
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* --- Dark Gradient Overlay --- */
+
+
+/* Left side ko zyada dark kiya hai taake text overlaid block readable rahe */
+
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 1;
+}
+
+
+/* --- Content Container (Overlaid on Left) --- */
+
+.content-container {
+    position: relative;
+    z-index: 2;
+    /* Overlay ke upar laane ke liye */
+    max-width: 600px;
+    /* Text column wide nahi hone dega */
+    padding-left: 60px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    /* Vertical alignment */
+    justify-content: space-between;
+    /* Caption aur links ko vertically spread karega */
+    height: auto;
+    /* Vertically centered flexible content area */
+}
+
+.content-container .subheading {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #eee;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.content-container h1 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+.content-container .bold-text {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.content-container .description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+
+/* --- Stream Action with Red Arrow icon --- */
+
+.stream-action {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.stream-action a {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.stream-action a:hover {
+    color: #d83933;
+    /* Hover par text red hoga */
+}
+
+.red-arrow-icon {
+    color: #d83933;
+    /* NASA's Red color for the icon */
+    font-size: 22px;
+}
+
+
+/* --- Image Caption - Vertical Alignment ke liye vertically content column ke bottom par --- */
+
+.image-caption {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ddd;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN (Tablets & Mobiles)
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* Mobile screen layout rules */
+    .birthday-full-screen-section {
+        height: auto;
+        /* Mobile par flexible height */
+        padding: 50px 0;
+        /* Vertically padding dein taake mobile height narrow na ho */
+    }
+    .content-container {
+        padding: 0 20px;
+        max-width: 100%;
+        /* Mobile par full column width */
+        align-items: flex-start;
+        /* Mobile text column centered visually */
+    }
+    .content-container h1 {
+        font-size: 35px;
+        text-align: left;
+    }
+    .content-container .bold-text {
+        font-size: 18px;
+        text-align: left;
+    }
+    .content-container .description {
+        font-size: 14px;
+        text-align: left;
+    }
+    .stream-action {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .image-caption {
+        font-size: 11px;
+        text-align: left;
+    }
 }
